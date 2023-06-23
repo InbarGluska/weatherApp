@@ -8,6 +8,8 @@ export default function Form({ onNameChange, onAddActivity }) {
         event.preventDefault();
         onNameChange(event.target.name.value);
         onAddActivity(event.target.checked);
+        event.target.reset();
+        document.getElementById("name").focus();
     }
 
     return (
