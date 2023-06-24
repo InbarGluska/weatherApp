@@ -4,7 +4,7 @@ import Form from "./components/Form.js";
 import List from "./components/List.js";
 import { uid } from "uid";
 import Weather from "./components/Weather";
-import Video from "./video/video.mp4"
+// import Video from "./video/video.mp4"
 
 import { useEffect } from "react";
 
@@ -45,6 +45,7 @@ export default function App() {
 
     const filteredActivities = activities.filter(
         (activity) => activity.isForGoodWeather === weather.isGoodWeather
+
     );
 
     function handleDeleteActivity(id) {

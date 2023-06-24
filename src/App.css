@@ -46,19 +46,28 @@ h1{
 h2,label{
     font-size: 4em;
 }
-p,::placeholder,button{
+p,button{
     font-size: 3em;
+}
+::placeholder{
+    font-size: 1.5em;
+
 }
 h1,h2,p,label,::placeholder, button{
     font-family: 'Caveat', cursive;
 }
 input{
-    height: 3em;
+    height: 2em;
     border-radius: 5px;
     /* padding-top: 9px; */
     font-family: 'Caveat', cursive;
     font-size:medium;
+    width:80%
+}
 
+input[type="text"]
+{
+    font-size:3em;
 }
 input[type="checkbox"]{
     margin-left:10px;
@@ -89,7 +98,7 @@ width:50px;
 height: 50px;
 font-size: 1.3em;
 margin:5px;
-background-color:gray;
+background-color:transparent;
 border:none;
 color:white;
 }
@@ -99,6 +108,11 @@ li{display:flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.3em;
+    margin:5px;
+    border: 2px solid black;
+}
+li p{
+    color: white;
 }
 
 .gif{
@@ -109,3 +123,12 @@ background-repeat: no-repeat;
 background-size: cover;
 /* margin: -10%; */
 }
+
+.good-weather {
+    background-color: rgb(63, 197, 245);
+  }
+
+  button.delete-button p{
+    color:white;
+    font-size: 2em;
+  }
