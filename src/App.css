@@ -50,7 +50,10 @@ input[type="checkbox"]{
     height: 20px;
     width: 20px;
 }
-/* input[type="checkbox"]:checked{
-background-color: color;
-color: black;
-} */
+.outputName{
+    background-color: gray;
+    color: white;
+    padding-left: 10px;
+    /* border: 2px black solid; */
+    width: 100%;
+}
