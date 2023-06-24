@@ -1,0 +1,56 @@
+#root{
+    display: flex;
+    justify-content: center;
+    
+    height: 1000px;
+    /* height:70%; */
+}
+
+.container h1{
+        text-align: center;
+}
+
+.container{
+    width: 30%;
+    border: 2px solid black;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+button{
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    margin: 20px 0px;
+}
+input{
+    margin: 5px 0px;
+}
+h1{
+    font-size: 5em;
+
+}
+h2,label{
+    font-size: 4em;
+}
+p,::placeholder,button{
+    font-size: 3em;
+}
+h1,h2,p,label,::placeholder, button{
+    font-family: 'Caveat', cursive;
+}
+input{
+    height: 3em;
+    border-radius: 5px;
+    padding-top: 9px;
+}
+input[type="checkbox"]{
+    margin-left:10px;
+    margin-top:10px;
+    height: 20px;
+    width: 20px;
+}
+/* input[type="checkbox"]:checked{
+background-color: color;
+color: black;
+} */
