@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function App() {
     const [name, setName] = useState("");
-    const [checkbox, setActivity] = useState("");
+    const [isForGoodWeather, setActivity] = useState("");
 
     return (
         <div className="container">
@@ -13,13 +13,12 @@ export default function App() {
             <Form onNameChange={setName} onAddActivity={setActivity} />
             <h2>Your activities:</h2>
             <p>
-                Name: <span className="output">{name}</span>
+                <span className="output">{name}</span>
             </p>
             <p>
-                Good-weather activity:{" "}
-                <span className="output">{checkbox}</span>
+                {" "}
+                <span className="output">{isForGoodWeather}</span>
             </p>
         </div>
     );
-
 }
