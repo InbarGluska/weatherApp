@@ -2,16 +2,16 @@
 
 export default function Form({ onNameChange, onAddActivity }) {
     // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
+    // const [email, setEmail] = useState(""); 
 
     function handleSubmit(event) {
         event.preventDefault();
         onNameChange(event.target.name.value);
-        onAddActivity(event.target.checked);
+        onAddActivity(event.target.isForGoodWeather.checked);
         event.target.reset();
         document.getElementById("name").focus();
-    }
 
+    }
     return (
         <form
             className="form"
@@ -29,7 +29,7 @@ export default function Form({ onNameChange, onAddActivity }) {
                 type="checkbox"
             />
             <br />
-            <button className="form__submit-button" type="submit">
+            <button className="form__submit-button" type="submit" >
                 Submit
             </button>
         </form>
