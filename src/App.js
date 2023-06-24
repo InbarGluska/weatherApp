@@ -4,6 +4,7 @@ import Form from "./components/Form.js";
 import List from "./components/List.js";
 import { uid } from "uid";
 import Weather from "./components/Weather";
+import Video from "./video/video.mp4"
 
 import { useEffect } from "react";
 
@@ -53,7 +54,9 @@ export default function App() {
     return (
         <>
             <div className="container">
-                <h1>Weather App </h1>
+             <div className="gif">
+
+            </div>
                 <Weather weather={weather}/>
                 <List
                     activities={filteredActivities}
