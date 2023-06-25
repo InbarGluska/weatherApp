@@ -1,26 +1,33 @@
+import useLocalStorageState from "use-local-storage-state";
 import "./App.css";
 import Form from "./components/Form.js";
+import List from "./components/List.js";
 import { useState, useEffect } from "react";
 import { uid } from "uid";
 
 export default function App() {
     const [name, setName] = useState("");
     const [isForGoodWeather, setActivity] = useState("");
-    // const [activities, setActivities] = useState([]);
+    const [activities, setActivities] = useState([]);
 
-    useEffect(() => {
-        const data = {
-            name: name,
-            isForGoodWeather: isForGoodWeather,
-        };
-        localStorage.setItem(uid(), JSON.stringify(data));
-    }, [name, isForGoodWeather]);
+    function handleAddActivities(newActivity) {
+        setActivities([...activities, { id: uid(), ...newActivity }]);
+    }
 
-    const data = {
-        name: name,
-        isForGoodWeather: isForGoodWeather,
-    };
-    localStorage.setItem(uid(), JSON.stringify(data));
+    // useEffect(() => {
+    //     const data = {
+    //         name: name,
+    //         isForGoodWeather: isForGoodWeather,
+    //     };
+
+    //     localStorage.setItem(uid(), JSON.stringify(data));
+    // }, [name, isForGoodWeather]);
+
+    // const data = {
+    //     name: name,
+    //     isForGoodWeather: isForGoodWeather,
+    // };
+    // localStorage.setItem(uid(), JSON.stringify(data));
 
     return (
         <div className="container">
@@ -30,9 +37,13 @@ export default function App() {
                 <div className="outputName">{name}</div>
             </p>
             <p>
-                <div className="output">{isForGoodWeather}</div>
+                <span className="output">{isForGoodWeather}</span>
             </p>
-            <Form onNameChange={setName} onAddActivity={setActivity} />
+            <Form
+                onNameChange={setName}
+                onAddActivity={setActivity}
+                onAddActivities={setActivities}
+            />
         </div>
     );
 }
