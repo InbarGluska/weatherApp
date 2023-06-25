@@ -9,7 +9,11 @@ export default function Form({ onNameChange, onAddActivity }) {
         onNameChange(event.target.name.value);
         onAddActivity(event.target.checked);
         event.target.reset();
-        document.getElementById("name").focus();
+        event.target.elements.name.focus();
+
+        // const handleAddActivity = (onAddActivity) => {
+        //     setActivities([...activities, onAddActivity]);
+        // };
     }
 
     return (

@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function App() {
     const [name, setName] = useState("");
     const [isForGoodWeather, setActivity] = useState("");
+    // const [activities, setActivities] = useState([]);
 
     return (
         <div className="container">
