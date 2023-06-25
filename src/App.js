@@ -1,12 +1,24 @@
-import React from "react";
 import "./App.css";
 import Form from "./components/Form.js";
 import { useState } from "react";
+import { uid } from "uid";
 
 export default function App() {
     const [name, setName] = useState("");
     const [isForGoodWeather, setActivity] = useState("");
     // const [activities, setActivities] = useState([]);
+
+    const data = {
+        name: name,
+        isForGoodWeather: isForGoodWeather,
+    };
+    localStorage.setItem(uid(), JSON.stringify(data));
+
+    const data = {
+        name: name,
+        isForGoodWeather: isForGoodWeather,
+    };
+    localStorage.setItem(uid(), JSON.stringify(data));
 
     return (
         <div className="container">
@@ -17,7 +29,6 @@ export default function App() {
                 <span className="output">{name}</span>
             </p>
             <p>
-                {" "}
                 <span className="output">{isForGoodWeather}</span>
             </p>
         </div>
