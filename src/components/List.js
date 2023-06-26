@@ -5,7 +5,7 @@ export default function List({ activities, isGoodWeather, onDeleteActivity }) {
             <ul class name="list">
                 {activities.map((activity) => (
                     <li key={activity.id} className="list_item">
-                        {activity.name}
+                        <p>{activity.name}</p>
                         <button
                             type="button"
                             aria-label="delete item"
