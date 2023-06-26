@@ -26,16 +26,21 @@ export default function App() {
             const weather = await response.json();
             console.log(weather);
             setWeather(weather);
+            console.log("fetching")
           } catch (error) {
             console.log("ERROR in FETCH: ", error);
           }
-          const id = setInterval(fetchingWeatherApi, 5000); //5000
-          return () => {
-            clearInterval(id);
-          };
         }
         fetchingWeatherApi();
+        const id = setInterval(fetchingWeatherApi, 5000);
+        return () => {
+          clearInterval(id);
+        };
       }, [setWeather]);
+
+
+
+
 
     console.log("activities", activities);
 
@@ -66,7 +71,6 @@ export default function App() {
                     isGoodWeather={weather?.isGoodWeather}
                     onDeleteActivity={handleDeleteActivity}
                 />
-                 <h3>Bad Weather</h3>
                 <List
                     activities={filteredActivitiesBadWeather}
                     isGoodWeather={weather?.isGoodWeather}
