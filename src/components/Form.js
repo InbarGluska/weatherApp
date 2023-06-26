@@ -1,14 +1,15 @@
-// import { useState } from "react";
-export default function Form({ onNameChange, onAddActivity, onAddActivities }) {
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
+export default function Form({ onAddActivities }) {
     function handleSubmit(event) {
         event.preventDefault();
-        onNameChange(event.target.name.value);
-        onAddActivity(event.target.isForGoodWeather.checked);
-        onAddActivities(event.target.elements);
-        event.target.reset();
+        const form = event.target;
+        const formElements = form.elements;
+        const data = {
+            name: formElements.name.value,
+            isForGoodWeather: formElements.isForGoodWeather.checked,
+        };
         document.getElementById("name").focus();
+        event.target.reset();
+        onAddActivities(data);
     }
 
     return (

@@ -1,9 +1,13 @@
 export default function List({ activities }) {
     return (
-        <ul>
-            {activities.map((activity) => (
-                <li key={activity.id}>{activity.name}</li>
-            ))}
-        </ul>
+        <>
+            <ul class name="list">
+                {activities.map((activity) => (
+                    <li key={activity.id} className="list_item">
+                        {activity.name}
+                    </li>
+                ))}
+            </ul>
+        </>
     );
 }
