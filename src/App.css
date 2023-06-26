@@ -7,21 +7,34 @@
 }
 
 .container h1{
-        text-align: center;
+    text-align: center;
 }
 
 .container{
-    width: 30%;
+    width: 40%;
     border: 2px solid black;
     padding: 30px;
     margin-top: 10px;
+    animation: bounce1 7s infinite;
+
 }
+
+
+  
+  @keyframes bounce1 {
+    0% {
+      transform: translate(0, 0px);
+    }
+    50% {
+      transform: translate(0px, 20px);
+    }
+  }
 
 button{
     height: 50px;
-    width: 200px;
+    width: 50%;
     border-radius: 5px;
-    margin: 20px 0px;
+    /* margin: 20px 0px; */
 }
 input{
     margin: 5px 0px;
@@ -42,7 +55,10 @@ h1,h2,p,label,::placeholder, button{
 input{
     height: 3em;
     border-radius: 5px;
-    padding-top: 9px;
+    /* padding-top: 9px; */
+    font-family: 'Caveat', cursive;
+    font-size:medium;
+
 }
 input[type="checkbox"]{
     margin-left:10px;
@@ -83,4 +99,13 @@ li{display:flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.3em;
+}
+
+.gif{
+    background: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExejZia3VmOHljenhnM3VmNXlvc3ptaDUxb3NzZ2dqeW5xcDNtYXFsbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QRhtqYeEywJI4/giphy.gif");
+height:40%;
+width:100%;
+background-repeat: no-repeat;
+background-size: cover;
+/* margin: -10%; */
 }
