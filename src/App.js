@@ -6,9 +6,10 @@ import { useState, useEffect } from "react";
 import { uid } from "uid";
 
 export default function App() {
-    const [name, setName] = useState("");
-    const [isForGoodWeather, setActivity] = useState("");
-    const [activities, setActivities] = useState([]);
+    const [name, setName] = useLocalStorageState("name");
+    const [isForGoodWeather, setActivity] =
+        useLocalStorageState("isForGoodWeather");
+    const [activities, setActivities] = useLocalStorageState("activities");
 
     function handleAddActivities(newActivity) {
         setActivities([...activities, { id: uid(), ...newActivity }]);
@@ -42,7 +43,7 @@ export default function App() {
             <Form
                 onNameChange={setName}
                 onAddActivity={setActivity}
-                onAddActivities={setActivities}
+                onAddActivities={handleAddActivities}
             />
         </div>
     );

@@ -6,7 +6,7 @@ export default function Form({ onNameChange, onAddActivity, onAddActivities }) {
         event.preventDefault();
         onNameChange(event.target.name.value);
         onAddActivity(event.target.isForGoodWeather.checked);
-        onAddActivities(event.target.Form);
+        onAddActivities(event.target.elements);
         event.target.reset();
         document.getElementById("name").focus();
     }
