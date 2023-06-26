@@ -38,23 +38,12 @@ export default function App() {
         };
       }, [setWeather]);
 
-
-
-
-
-    console.log("activities", activities);
-
     function handleAddActivities(newActivity) {
         setActivities([...activities, { id: uid(), ...newActivity }]);
     }
 
-    // const weather = true;
-
-    const filteredActivitiesGoodWeather = activities.filter(
-        (activity) => activity.isForGoodWeather === weather
-    );
-    const filteredActivitiesBadWeather = activities.filter(
-        (activity) => !activity.isForGoodWeather
+    const filteredActivities = activities.filter(
+        (activity) => activity.isForGoodWeather === weather.isGoodWeather
     );
 
     function handleDeleteActivity(id) {
@@ -67,15 +56,10 @@ export default function App() {
                 <h1>Weather App </h1>
                 <Weather weather={weather}/>
                 <List
-                    activities={filteredActivitiesGoodWeather}
+                    activities={filteredActivities}
                     isGoodWeather={weather?.isGoodWeather}
                     onDeleteActivity={handleDeleteActivity}
                 />
-                <List
-                    activities={filteredActivitiesBadWeather}
-                    isGoodWeather={weather?.isGoodWeather}
-                    onDeleteActivity={handleDeleteActivity}
-                /> 
                 <Form onAddActivities={handleAddActivities} />
             </div>
         </>
